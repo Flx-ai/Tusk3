@@ -8,9 +8,8 @@ public class Main {
     public static final VerticalParabola V1 = new VerticalParabola(5, 1, -1);
     public static final Circle C1 = new Circle(-6, 4, 2);
 
-
     public static void main(String[] args) {
-
+        
         printColorForPoint(5,9);
         printColorForPoint(6,-5);
         printColorForPoint(5,0.5);
