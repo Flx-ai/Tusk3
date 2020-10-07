@@ -8,22 +8,27 @@ public class Main {
     public static final VerticalParabola V1 = new VerticalParabola(5, 1, -1);
     public static final Circle C1 = new Circle(-6, 4, 2);
 
+
     public static void main(String[] args) {
-        
+
+        double x = readCoordinate('x');
+        double y = readCoordinate('y');
+        printColorForPoint(x,y);
+
         printColorForPoint(5,9);
         printColorForPoint(6,-5);
         printColorForPoint(5,0.5);
         printColorForPoint(-6, 2.5);
         printColorForPoint(-5,4);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input x = ");
-        double x = sc.nextDouble();
-        System.out.print("Input y = ");
-        double y = sc.nextDouble();
-        System.out.printf("(%.1f, %.1f) -> %S%n", x, y, getColor(x,y));
+
     }
 
+    static double readCoordinate(char coordinateName){
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("Input %S: ", coordinateName);
+        return scanner.nextDouble();
+    }
     public static Enum.SimpleColor getColor(double x, double y) {
 
         if (L1.isPointAboveLine(x, y) && !C1.isPointInsideCircle(x, y)) {
